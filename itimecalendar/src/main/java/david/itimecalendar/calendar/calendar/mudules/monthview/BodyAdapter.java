@@ -25,6 +25,7 @@ import david.itimecalendar.calendar.wrapper.WrapperTimeSlot;
  */
 
 public class BodyAdapter extends ITimeAdapter {
+    private static final String TAG = "BodyAdapter";
     private ITimeEventPackageInterface eventPackage;
     private TimeSlotView.TimeSlotPackage slotsInfo;
     private Context context;
@@ -72,6 +73,7 @@ public class BodyAdapter extends ITimeAdapter {
 
     @Override
     public void onBindViewHolder(View item, int offset) {
+        Log.i(TAG, "onBindViewHolder: offset: " + offset);
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.DATE, offset);
 
